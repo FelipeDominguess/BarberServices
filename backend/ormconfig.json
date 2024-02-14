@@ -1,0 +1,17 @@
+{
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "fdomi",
+    "password": "1234",
+    "database": "baseOrm",
+    " entities": [
+        "dist/entities/**/*{.js,.ts}"
+    ],
+    "migrations": [
+        "dist/migrations/**/*{.js,.ts}"
+    ],
+    "cli": {
+        "migrationsDir": "src/migrations"
+    }
+}
