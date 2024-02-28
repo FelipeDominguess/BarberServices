@@ -8,7 +8,11 @@ import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
 
-export default function ResponsiveDatePickers() {
+export default function ResponsiveDatePickers({ onClose }) {
+  const handleDateChange = (newDate) => {
+    // Aqui você pode realizar outras ações com a nova data se necessário
+    onClose(); // Chamando a função onClose para fechar o DatePicker
+  };
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DemoContainer
@@ -19,8 +23,8 @@ export default function ResponsiveDatePickers() {
           'StaticDatePicker',
         ]}
       >
-        <DemoItem label="Static variant">
-          <StaticDatePicker defaultValue={dayjs('2022-04-17')} />
+        <DemoItem label="">
+          <StaticDatePicker defaultValue={dayjs('2024-02-28')} onChange={handleDateChange} />
         </DemoItem>
       </DemoContainer>
     </LocalizationProvider>
